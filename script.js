@@ -12,8 +12,9 @@ function firstNonRepeatedChar(s) {
 	}
 	for (let [key,value] of map.entries()) {
 		if (value==1) return key;
+		else return "null";
 	}
 	
 }
-const input = prompt("Enter a string");
+//const input = prompt("Enter a string");
 alert(firstNonRepeatedChar(input)); 
