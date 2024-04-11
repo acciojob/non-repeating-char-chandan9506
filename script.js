@@ -1,19 +1,12 @@
 function firstNonRepeatedChar(s) {
  // Write your code here
-	let map = new Map();
-	let str = s.split("");
-	for (let i = 0; i < str.length; i++) {
-		if (map.has(str[i])) {
-			map.set(str[i] , map.get(str[i])+1);
-		}
-		else{
-			map.set(str[i] , 1);
-		}
+		let x_or = s[0].charCodeAt();
+	for (let i=1 ; i<s.length ; i++){
+	  x_or = x_or ^ s[i].charCodeAt();
 	}
-	for (let [key,value] of map.entries()) {
-		if (value==1) return key;
-		else return "null";
-	}
+	if (x_or != 0)
+  return String.fromCharCode(x_or);
+  else return "null";
 	
 }
 const input = prompt("Enter a string");
