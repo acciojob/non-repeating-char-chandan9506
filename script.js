@@ -11,7 +11,7 @@ function firstNonRepeatedChar(s) {
 		}
 	}
 	for (let [key,value] of map.entries()) {
-		if value==1 return key;
+		if (value==1) return key;
 	}
 	
 }
