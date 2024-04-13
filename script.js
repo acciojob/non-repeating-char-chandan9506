@@ -1,14 +1,24 @@
 function firstNonRepeatedChar(s) {
  // Write your code here
-		let x_or = s[0].charCodeAt();
-	for (let i=1 ; i < s.length ; i++){
-	  x_or = x_or ^ s[i].charCodeAt();
+	let obj = {};
+	for (let i = 0; i < s.length; i++) {
+		if(obj[s[i]]  == undefined){
+				obj[s[i]] = 1;
+		}
+		else{
+			  obj[s[i]] = ++obj[s[i]];
+		}
 	}
-	if (x_or != 0)
-	  return String.fromCharCode(x_or);
-   else return "null";
-	
+  console.log(obj);
+	for(let t in obj){
+		if(obj[t] === 1){
+		  return t;
+		}
+	}
+	return null
 }
 
+
 const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+alert
+(firstNonRepeatedChar(input)); 
